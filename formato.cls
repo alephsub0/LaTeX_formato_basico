@@ -1,3 +1,7 @@
+%%
+%% Clase para dar formato a documentos
+%% Copyright (C) 2019 by Daniel Lara <daniel.lara@alephsub0.org>
+%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{formato}[2019/08/12 v1.0]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,7 +55,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[\@idioma]{babel}
 \RequirePackage{ifthen}
-\usepackage{mathrsfs}
+\RequirePackage{mathrsfs}
 \RequirePackage{calc}
 \RequirePackage{etex}
 \RequirePackage{xcolor}
