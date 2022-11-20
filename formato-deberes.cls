@@ -412,7 +412,7 @@
         }
     \newtheorem{ejern}[prop]{Ejercicio}
         \tcolorboxenvironment{ejern}{%
-            color=colordef,recuadrost,colback=gray!5,drop fuzzy shadow
+            color=black,recuadrost,colback=gray!5,drop fuzzy shadow
         }
 %%  Ambientes con título aparte: |teon|.
 \newtcolorbox{teon}[1][]
