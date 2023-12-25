@@ -1,0 +1,50 @@
+\documentclass[compacto]{aleph-formato}
+
+\usepackage{aleph-comandos-beta}
+
+\autor{Daniel Lara}
+\materia{Analisis Funcional}
+\tema{Tarea 1}
+\fecha{Diciembre, 2023}
+\codigomateria{M101}
+\subtema{ }
+
+\fuente{mathpazo}
+
+\begin{document}
+
+% \vspace*{-0.1mm}
+\encabezado
+
+\begin{teo}
+    En un espacio métrico de dimensión finita todas las normas son equivalentes.
+\end{teo}
+
+\begin{obs}
+    En el caso de dimensión infinita, no todas las normas son equivalentes. Por ejemplo, en el espacio $C([0,1])$ con la norma del supremo, la norma $\norma{}_1$ no es equivalente a la norma del supremo.
+\end{obs}
+
+\begin{ejer}
+    Sean $(X,d_1)$ y $(X,d_2)$ dos espacios métricos y sean $a$ y $b$ números positivos tales que para todo $x,y\in X$, se cumple que
+    \[
+        a d_1(x,y) \leq d_2(x,y) \leq b d_1(x,y).
+    \]
+    Muestre que si $\suc{x_n}$ es una sucesión de Cauchy en $(X,d_1)$ entonces también es una sucesión de Cauchy en $(X,d_2)$.
+\end{ejer}
+
+\begin{esquema}
+Gracias a la desigualdad de la hipótesis se puede acotar la sucesión en la métrica $d_2$ con la métrica $d_1$, luego el resultado es evidente. 
+\end{esquema}
+
+\begin{ejer}
+    Muestre que el subespacio $Y\subseteq C([a,b])$ que consiste de todas las funciones $u\in C([a,b])$ tales que $u(a)=u(b)$, es completo. 
+\end{ejer}
+
+\begin{esquema}
+    Mostremos que $Y$ es cerrado en $(C([a,b]),d_\infty)$, por lo tanto, completo. En efecto, si $\suc{f_n}$ está en $Y$ y como la convergencia del espacio es uniforme, entonces $f(a)=f(b)$. Por lo tanto, el espacio es cerrado en un espacio completo, lo que implica que $Y$ es completo con la métrica $d_\infty$
+\end{esquema}
+
+\end{document}
+
+
+

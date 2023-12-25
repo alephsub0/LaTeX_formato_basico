@@ -1,0 +1,187 @@
+\documentclass[11pt,a4paper]{ltxdoc} 
+\usepackage[spanish,es-noindentfirst,es-tabla]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[margin=2.5cm,left=3.5cm]{geometry}
+\usepackage{mathpazo}
+\usepackage{changelog}
+
+\setlength{\parskip}{0.2\baselineskip}
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\option}[1]{\texttt{#1}}
+\newcommand{\package}[1]{\texttt{#1}}
+
+\title{\file{aleph-notas.cls}}
+\author{Proyecto Alephsub0\\ Daniel Lara\footnote{Facultad de Ciencias, Escuela Politécnica Nacional}}
+\date{2023-12-26\\ Versión 2.0}
+
+\usepackage[colorlinks,linkcolor=teal,urlcolor=teal,
+   citecolor=black,bookmarks=true]{hyperref}
+\usepackage{url}
+
+\begin{document}
+ 
+\maketitle
+
+\begin{abstract}
+    \file{aleph-formato.cls} es una clase creada para dar formato a tareas realizadas en \LaTeX. Esta clase fue generada dentro del proyecto Alephsub0 (\url{https://www.alephsub0.org/}).
+\end{abstract}
+
+\tableofcontents
+
+\section{Introducción}
+
+La clase \file{aleph-foramto.cls} es está inspirada \texttt{aleph-notas.cls} en parte del conjunto de clases y paquetes creados por Andrés Merino dentro de su proyecto personal Alephsub0.
+
+\section{Uso}
+
+Para cargar la clase se utiliza: \cs{documentclass}\oarg{opciones}|{aleph-formato}| con las opciones acordes al formato que se desee.
+
+
+\subsection{Opciones}
+
+Las opciones de la clase son las siguientes:
+\begin{description}
+    \item[|9pt|,|10pt|, |11pt|, |12pt|] ajustan el tamaño de fuente. Por defecto, se usa |10pt|.
+    \item[|amplio|, |compacto|, |A4|, |A4-s|, |A5|] genera la geometría de las notas predeterminada, es decir, tamaño de página y márgenes. Las dimensiones generadas por por estas opciones están dadas en la Tabla~\ref{tab:01}. Por defecto, se usa |compacto|.
+    \item[|comentarios|, |codigo|] muestran el contenido de los ambientes opcionales |comentario| y |código|. Por defecto, no se muestra el contenido de estos ambientes.
+\end{description}
+  
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{cccccc}\hline
+        Opción & Dimensiones & Interno & Externo & Superior & Inferior \\\hline
+        |amplio| & 195mm$\times$265mm & 2.2cm & 2.2cm & 2.25cm & 2.25cm\\
+        |compacto| & 160mm$\times$240mm & 1.7cm & 1.7cm & 2cm & 2cm\\
+        |A4| & A4 & 2.2cm & 2.2cm & 2.25cm & 2.25cm\\
+        |A4-s| & A4 & 1cm & 1cm & 1cm & 1.8cm\\
+        |A5| & A5 & 2.2cm & 1cm & 2.25cm & 2.25cm\\
+        \hline
+    \end{tabular}
+    \caption{Geometría de página predefinida.}
+    \label{tab:01}
+\end{table}
+
+\subsection{Colores}
+
+Las clase trabaja con un color básico:
+\begin{description}
+    \item[|colordef|] es el color preestablecido para los ambientes de teoremas y notas al margen. El color predefinido por la clase es negro.
+
+\end{description}
+Se puede cambiar fácilmente estos colores con el comando\\
+    \hspace*{3em}\cs{definecolor}|{colordef}|\marg{formato de color}\marg{color}\\
+    \hspace*{3em}\cs{definecolor}|{colortext}|\marg{formato de color}\marg{color}
+
+\section{Comando para tipografía}
+
+Para esta nueva versión se incluye el comando \verb|\fuente|
+
+\DescribeMacro{\fuente} 
+    El comando fuente tiene el formato\\
+        \hspace*{3em}\cs{fuente}\marg{nombre fuente},\\
+    el \meta{nnombre fuente} especifica el tipo de paquete de fuente incluido en el documento, las opciones son: mathpazo y monstserrat.
+
+\subsection{Comandos de datos informativos para las notas}
+
+\DescribeMacro{\institucion} 
+    El comando institucion tiene el formato\\
+        \hspace*{3em}\cs{institucion}\marg{nombre de la institución}.\\
+    este comando es opcional.
+
+\DescribeMacro{\autor} 
+    El comando autor tiene el formato\\
+        \hspace*{3em}\cs{autor}\marg{nombre autor}.\\
+        este comando es obligatorio.
+
+\DescribeMacro{\materia}
+\DescribeMacro{\codigomateria}
+\DescribeMacro{\semetre}
+\DescribeMacro{\fecha} 
+\DescribeMacro{\tema}
+\DescribeMacro{\subtema}
+    
+\subsection{Comandos varios}
+
+\DescribeMacro{\encabezado}
+    El comando \cmd{\encabezado} genera el encabezado de la página, no tiene ninguna opción.
+
+\newpage
+\subsection{Estilo de teoremas}
+
+\DescribeEnv{ejem}
+\DescribeEnv{obs}
+\DescribeEnv{prop}
+\DescribeEnv{cor}
+\DescribeEnv{lem}
+\DescribeEnv{teo}
+\DescribeEnv{defi}
+\DescribeEnv{axioma}
+\DescribeEnv{ejer}
+    Existen dos estilos de teoremas definidos: recuadro sin título aparte y recuadro con título aparte. Los ambientes predefinidos son: 
+\begin{description}
+    \item[|ejem|] para ejemplos, no utiliza recuadro, se numeran según la sección.
+    \item[|obs|] para observaciones, no utiliza recuadro, por defecto no se numera a menos que se tenga la opción |numobs|.
+    \item[|prop|{,} |cor|{,} |lem|] para proposiciones, corolarios y lemas, utiliza recuadro sin título aparte. Se numeran según la sección.
+    \item[|teo|] para teoremas, utiliza recuadro con título aparte izquierdo. Se numeran continuando |prop|.
+    \item[|defi|] para definiciones, utiliza recuadro con título aparte izquierdo. Se numeran según la sección.
+    \item[|axioma|] para axiomas, utiliza recuadro con título aparte izquierdo. Se numeran según el sección.
+    \item[|ejer|] para ejercicios, utiliza recuadro sin título aparte con la opción. Se numeran según el sección.
+\end{description}
+
+\subsection{Estilo de advertencia}
+
+\DescribeEnv{advertencia}
+    Este ambiente genera un recuadro amarillo sin título, pensado originalmente para colocar advertencias llamativas. Se pueden generar ambientes similares a este bajo la siguiente sintaxis:\\
+    \hspace*{3em}\cs{newtcolorbox}\marg{nombre del ambiente}\verb"{postit}"
+    
+También se pueden generar más ambientes de teoremas, con otros formatos y colores, siguiendo los ejemplos que se muestran en el paquete \package{aleph-libro.cls} (\url{https://www.alephsub0.org/recursos/}).
+
+\subsection{Problemas}
+
+\begin{itemize}
+\item 
+    La versión actual trabaja bien en la versión de TeXLive 2019 en adelante (específicamente, con el paquete \package{tcolorcox} v4.20). Si se usa una versión anterior, existe una incompatibilidad con la actualización del paquete. Para utilizar versiones anteriores de ese paquete, es necesario cambiar:
+    \begin{itemize}
+        \item |tcbcolback| por |tcbcol@back|
+        \item |tcbcolframe| por |tcbcol@frame|
+    \end{itemize}
+\end{itemize}
+
+Cualquier problema adicional, por favor reportarlo a\\ 
+\url{mat.andresmerino@gmail.com}.
+
+\begin{changelog}[author=Daniel Lara,
+    sectioncmd=\section]
+    % version 2.0
+    \begin{version}[v=2.0,
+        date=2023-11-27]
+        \removed
+        \item Se elimina el formato clásico para el estilo de los teoremas.
+        \added 
+        \item Se añade la posibilidad de seleccionar fuentes: Palatino Linotype (mathpaso) y Monstserrat
+        \changed 
+        \item Se modifica el diseño del encabezado.
+    \end{version}
+    % version 1.1
+    \begin{version}[v=1.1,
+    date=2021]
+        \added
+        \item Se incluye estilos de formato para ambientes: fclasico, fnuevo
+    \end{version}
+    % version 1.0
+    \shortversion{v=1.0,
+    date=2019-05-11,
+    changes=Primera versión del paquete \texttt{formato-deberes}}
+\end{changelog}
+
+\newpage
+\DocInput{aleph-formato.dtx}
+
+\end{document}
