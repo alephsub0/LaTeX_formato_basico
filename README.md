@@ -7,10 +7,8 @@ Esta clase es una clase creada para dar formato a tareas realizadas en LaTeX, es
 ### Últimos cambios
 
 ```
-2.0  2023-12-25
-   - Se elimina el estilo clásico
-   - Se agrega soporte nativo para la fuente Monstserrat
-   - Se modifca el diseño del encabezado
+2.0.1  2023-12-27
+   - Se agrega el paquete fontawesome para los íconos requeridos
 ```
 
 ### Licencia
@@ -21,5 +19,5 @@ ________
 Daniel Lara,
 Proyecto Alephsub0 --- https://www.alephsub0.org/
 
-2023/12/25
+2023/12/27
 ```

@@ -16,7 +16,7 @@
 %% 
 
 \NeedsTeXFormat{LaTeX2e}[2009/09/24]
-\ProvidesClass{aleph-formato}[2023/12/27 v2.0]
+\ProvidesClass{aleph-formato}[2023/12/27 v2.0.1]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% --- Inicialización
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,6 +81,7 @@
 \RequirePackage{geometry}
 \RequirePackage[colorlinks,allcolors=.,breaklinks]{hyperref}
 \RequirePackage{lastpage}
+\RequirePackage{fontawesome}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ---> Opción de puntuación
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
